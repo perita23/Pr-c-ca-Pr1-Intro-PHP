@@ -1,7 +1,7 @@
 <?php
 
-$num1 = rand(1, 10);
-$num2 = rand(1, 10);
+$num1 = rand(0, 10);
+$num2 = rand(0, 10);
 echo "<hr>";
 echo "Sumar,restar y dividir dos numeros";
 echo "Numero 1 =" . $num1;
@@ -9,7 +9,11 @@ echo "Numero 2 = " . $num2 . "<br>";
 
 echo "SUMA = " . $num1 + $num2;
 echo "RESTA = " . $num1 - $num2;
-echo "DIVIDIR" . $num1 / $num2;
+if ($num1 | $num2 == 0) {
+    echo "Uno de los dos numero es 0, no se puede dividir entre 0";
+}else{
+    echo "DIVIDIR = " . $num1 / $num2;
+}
 echo "<hr>";
 //------------------------------------------------//
 
@@ -23,7 +27,5 @@ if ($num1 > $num2) {
 
 //------------------------------------------------//
 if ($num1 % $num2 > 1) {
-
-
-    echo "hola";
+    echo "Area del triangulo = ".$num1*$num2/2;
 }
