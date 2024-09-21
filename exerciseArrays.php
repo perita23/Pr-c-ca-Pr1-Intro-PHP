@@ -38,8 +38,26 @@ foreach ($arrayLetters as $key => $value) {
 echo "<hr>";
 //-------------------------------------------//
 echo "Actividad 6<br><br>";
-$notas = array("Miguel"=>5,"Luis"=>7,"Marta"=>10,"Isabel"=> 8,"Aitor"=>8,"Pepe"=>1);
+$notas = array("Miguel"=>5,"Luis"=>7,"Marta"=>10,"Isabel"=> 8,"Aitor"=>4,"Pepe"=>1);
 asort($notas); /* Mantiene las keys del array asociativo*/
 foreach (array_reverse($notas) as $key => $value) {
     echo"$key:".$value."<br>";
 }
+echo "<hr>";
+//-------------------------------------------//
+echo "Actividad 7<br><br>";
+$mediaNotas = null;
+foreach ($notas as $key => $value) {
+    $mediaNotas = $mediaNotas + $value;
+}
+$mediaNotas = round($mediaNotas/count($notas),2);
+echo "Media de notas: ".$mediaNotas."<br>";
+echo "Alumnos por encima de la media:<br>";
+foreach ($notas as $key => $value) {
+    if ($value > $mediaNotas ){
+        echo "-".$key."<br>";
+    }
+}
+echo "<hr>";
+//-------------------------------------------//
+echo "Actividad 8<br><br>";
