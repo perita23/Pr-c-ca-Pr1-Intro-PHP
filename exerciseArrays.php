@@ -61,3 +61,8 @@ foreach ($notas as $key => $value) {
 echo "<hr>";
 //-------------------------------------------//
 echo "Actividad 8<br><br>";
+asort($notas); /* Mantiene las keys del array asociativo*/
+foreach (array_reverse($notas) as $key => $value) {
+    echo"La nota mas alta es $value y el mejor alumno es $key<br>";
+    break;
+}
