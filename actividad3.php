@@ -1,36 +1,36 @@
 <?php
-$num1= rand(10,20);
-$num2= rand(10,20);
+$num1 = rand(10, 20);
+$num2 = rand(10, 20);
 //---------------------------------------//
-echo"Numero1 = ".$num1;
-echo"Numero2 = ".$num2;
-echo "Progresión con bucle FOR:";
+echo "<h2>For</h2>";
+echo "Numero1 = " . $num1 . "<br>";
+echo "Numero2 = " . $num2 . "<br>";
+echo "Progresión con bucle FOR: <br>";
 for ($i = 0; $i < $num1; $i++) {
     if ($i / 2  | $i == 0) {
-        echo $i;
+        echo $i . " | ";
     }
 }
 echo "<hr>";
 
 //--------------------------------------//
-echo"Numero1 = ".$num1;
-echo"Numero2 = ".$num2;
-while ($i < $num2) {
-    echo $i;
+echo "<h2>While</h2>";
+echo "Numero1 = " . $num1 . "<br>";
+echo "Numero2 = " . $num2."<br>";
+$b = 0;
+while ($b++ < $num2) {
+    echo $b." | ";
 }
 echo "<hr>";
 
 
 //-------------------------------------//
-echo"Numero1 = ".$num1;
-echo"Numero2 = ".$num2;
+echo "<h2>Do/While</h2>";
+echo "Numero1 = " . $num1."<br>";
+echo "Numero2 = " . $num2."<br>";
 $a = $num1;
-if ($num2 < $num1) {
-    do {
-        echo $a ;
-        $a++ ;
-    } while ($a < $num2);
-}else{
-    echo "El segundo numero es menor que el primero!";
-    echo $num1;
-}
+do {
+    echo $a." | ";
+} while ($a++ < $num2);
+// echo "El segundo numero es menor que el primero!";
+// echo $num1;

@@ -28,7 +28,7 @@ echo "Actividad 4<br><br>";
 unset($asocArray["ciudad"]);
 var_dump($asocArray);
 echo "<hr>";
-//--------------------------------------------//
+//---------------------------------------------//
 echo "Actividad 5<br><br>";
 $letters = "a,b,c,d,e,f";
 $arrayLetters = array_reverse(explode(",", $letters), true);
