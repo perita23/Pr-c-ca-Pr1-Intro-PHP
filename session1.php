@@ -43,6 +43,8 @@ if (isset($_POST["submit"])) {
         <option value="zumito">zumito</option>
         <option value="leche">leche</option>
     </Select>
+    <br>
+    <h2>Cantidad</h2>
     <br><br>
     <input type="button" value="add" name="submit">
     <input type="button" value="remove" name="submit">
