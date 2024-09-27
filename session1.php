@@ -58,7 +58,7 @@ if (isset($_POST["submit"])) {
                 echo "";
             }
             ?>
-                                                                    ">
+        ">
         </label>
         <br>
         <hr>
