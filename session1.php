@@ -71,11 +71,11 @@ if (isset($_POST["submit"])) {
         <h2>Cantidad</h2>
         <input type="number" name="cantidad" id="cantidad">
         <?php
-        if (isset($_SESSION["inventory"])) {
-            if ($removeError) {
-                echo "<b> ¡No se puede quitar mas cantidad de la que ya hay en la lista!</b>";
+            if (isset($_SESSION["inventory"])) {
+                if ($removeError) {
+                    echo "<br><b> ¡No se puede quitar mas cantidad de la que ya hay en la lista!</b>";
+                }
             }
-        }
         ?>
         <br><br>
         <input type="submit" value="add" name="submit">
