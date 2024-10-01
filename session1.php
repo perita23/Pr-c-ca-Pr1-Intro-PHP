@@ -28,11 +28,39 @@ if (isset($_POST["submit"])) {
             break;
         case 'reset':
             session_destroy();
+            session_abort();
             break;
 
         default:
             # code...
             break;
+    }
+}
+/* Function for html */
+function showName()
+{
+    if (isset($_SESSION["inventory"])) {
+        echo $_SESSION["inventory"]["name"];
+    } else {
+        echo "";
+    }
+}
+function canotAdd($Error)
+{
+    if (isset($_SESSION["inventory"])) {
+        if ($Error) {
+            echo "<br><b> ¡No se puede quitar mas cantidad de la que ya hay en la lista!</b>";
+        }
+    }
+}
+function showInventory()
+{
+    if ($_SESSION["inventory"]["name"] == null) {
+        echo "No hay nada en el inventario...";
+    } else {
+        foreach ($_SESSION["inventory"] as $key => $value) {
+            echo "$key: " . $value . "<br>";
+        }
     }
 }
 ?>
@@ -50,15 +78,7 @@ if (isset($_POST["submit"])) {
     <form action="session1.php" method="post">
         <label for="workerName">
             Nombre del trabajador:
-            <input id="workerName" name="name" type="text" value="
-            <?php
-            if (isset($_SESSION["inventory"])) {
-                echo $_SESSION["inventory"]["name"];
-            } else {
-                echo "";
-            }
-            ?>
-        ">
+            <input id="workerName" name="name" type="text" value="<?php showName() ?>">
         </label>
         <br>
         <hr>
@@ -70,28 +90,14 @@ if (isset($_POST["submit"])) {
         <br>
         <h2>Cantidad</h2>
         <input type="number" name="cantidad" id="cantidad">
-        <?php
-            if (isset($_SESSION["inventory"])) {
-                if ($removeError) {
-                    echo "<br><b> ¡No se puede quitar mas cantidad de la que ya hay en la lista!</b>";
-                }
-            }
-        ?>
+        <?php canotAdd($removeError) ?>
         <br><br>
         <input type="submit" value="add" name="submit">
         <input type="submit" value="remove" name="submit">
         <input type="submit" value="reset" name="submit">
     </form>
     <h2>Inventario:</h2>
-    <?php
-    if ($_SESSION["inventory"]["name"] == null) {
-        echo "No hay nada en el inventario...";
-    } else {
-        foreach ($_SESSION["inventory"] as $key => $value) {
-            echo "$key: " . $value . "<br>";
-        }
-    }
-    ?>
+    <?php showInventory()?>
 </body>
 
 </html>
