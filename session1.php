@@ -1,4 +1,5 @@
 <?php
+
 $removeError = "";
 session_start();
 if (!isset($_SESSION["inventory"])) {
@@ -29,10 +30,6 @@ if (isset($_POST["submit"])) {
         case 'reset':
             session_destroy();
             session_abort();
-            break;
-
-        default:
-            # code...
             break;
     }
 }

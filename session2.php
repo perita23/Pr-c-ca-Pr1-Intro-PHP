@@ -1,13 +1,15 @@
 <?php
-$_SESSION["numbers"] = [1, 2, 3];
+session_start();
+if (!isset($_SESSION["numbers"])) {
+    $_SESSION["numbers"] = [1, 2, 3];
+}
 if (isset($_POST["submit"])) {
     switch ($_POST["submit"]) {
         case 'modificar':
-            $_SESSION["numbers"][$_POST["position"] - 1] = $_POST["newVal"];
+            $_SESSION["numbers"][$_POST["position"] - 1] = (int)$_POST["newVal"];
             break;
         case 'reiniciar':
-            session_destroy();
-            session_abort();
+            $_SESSION['numbers'] = [0, 0, 0];
             break;
     }
 }
@@ -40,6 +42,7 @@ if (isset($_POST["submit"])) {
     </form>
     <br><br>
     <?php
+    echo json_encode($_SESSION['numbers']);
     if (isset($_POST["media"])) {
         $media = 0;
         foreach ($_SESSION["numbers"] as $key => $value) {
