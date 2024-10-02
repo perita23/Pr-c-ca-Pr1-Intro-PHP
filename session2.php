@@ -28,12 +28,13 @@ if (isset($_POST["submit"])) {
         <h2>Modificar array guardado en variable session</h2>
         <label for="position">
             Posicion a modificar:
-            <input type="number" name="position" id="position">
+            <input type="number" name="position" id="position" min="1" max="3" step="1">
+            <span>Introduce un numero entre 1 - 3</span>
         </label>
         <br><br>
         <label for="newVal">
             Nuevo valor:
-            <input type="number" name="newVal" id="newVal">
+            <input type="number" name="newVal" id="newVal" min="1" max="<?php echo PHP_INT_MAX?>" step="1">
         </label>
         <br><br>
         <input type="submit" value="modificar" name="submit">
@@ -42,13 +43,13 @@ if (isset($_POST["submit"])) {
     </form>
     <br><br>
     <?php
-    echo json_encode($_SESSION['numbers']);
+    echo "Array actual: " . json_encode($_SESSION['numbers']);
     if (isset($_POST["media"])) {
         $media = 0;
         foreach ($_SESSION["numbers"] as $key => $value) {
             $media += $value;
         }
-        echo $media / 3;
+        echo "<br>Media = " . $media / 3;
     }
     ?>
 </body>
