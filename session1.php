@@ -30,6 +30,7 @@ if (isset($_POST["submit"])) {
         case 'reset':
             session_destroy();
             session_abort();
+            header("Refresh:0");
             break;
     }
 }
