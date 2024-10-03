@@ -1,5 +1,6 @@
 <?php
 $dia = rand(1, 10);
+echo "El numero es: ".$dia."<br>";
 switch ($dia) {
 
     case 1:
@@ -22,6 +23,7 @@ switch ($dia) {
         break;
     case 7:
         echo "Domingo";
+        break;
     default:
         echo "El numero no corresponde en ningun dia";
         break;

@@ -5,9 +5,8 @@ $num2 = rand(10, 20);
 echo "<h2>For</h2>";
 echo "Numero1 = " . $num1 . "<br>";
 echo "Numero2 = " . $num2 . "<br>";
-echo "Progresión con bucle FOR: <br>";
 for ($i = 0; $i < $num1; $i++) {
-    if ($i / 2  | $i == 0) {
+    if ($i % 2 == 0 | $i == 0) {
         echo $i . " | ";
     }
 }
@@ -18,8 +17,9 @@ echo "<h2>While</h2>";
 echo "Numero1 = " . $num1 . "<br>";
 echo "Numero2 = " . $num2."<br>";
 $b = 0;
-while ($b++ < $num2) {
+while ($b < $num2) {
     echo $b." | ";
+    $b++;
 }
 echo "<hr>";
 
